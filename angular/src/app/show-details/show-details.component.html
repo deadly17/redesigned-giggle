@@ -1,0 +1,28 @@
+<button class="btn btn-success" (click)='showdetails()'>Show</button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-info" (click)="newAddress()">Enter new Address</button>
+
+<table class="table table-bordered">
+  <tr>
+    <td>Customer Name</td>
+    <td>Flat/HouseNo</td>
+    <td>Area Name</td>
+    <td>Road Name</td>
+    <td>City</td>
+    <td>Pincode</td>
+    <td>State</td>
+    <td>Email Id</td>
+    <td>Phone No</td>
+  </tr>
+  <tr *ngFor="let ship of shipdetails">
+    <td>{{ship.cust_name}}</td>
+    <td>{{ship.flat_no}}</td>
+    <td>{{ship.area_name}}</td>
+    <td>{{ship.road_name}}</td>
+    <td>{{ship.city}}</td>
+    <td>{{ship.pincode}}</td>
+    <td>{{ship.state}}</td>
+    <td>{{ship.email_id}}</td>
+    <td>{{ship.phone_no}}</td>
+    <td><button type="submit" class="btn btn-success" (click)="proceed()">Select and Proceed to Pay</button></td>
+  </tr>
+  
+</table>

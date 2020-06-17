@@ -1,0 +1,89 @@
+<form   #addform=ngForm> 
+    <h3>Enter The Shipping Address Below:</h3>
+  <table class="table table-bordered">
+    <tr>
+      <td>Customer ID:</td>
+      <td>{{ship.customer_id}}</td>
+    </tr>
+    <tr>
+      <td><b>Enter Customer Name</b></td>
+      <td><input 
+         [(ngModel)]="ship.cust_name" #cust_name=ngModel name="cust_name" required pattern="[a-z A-z]{3,}">
+        <span *ngIf="cust_name.invalid && ( cust_name.errors.required || cust_name.errors.pattern)" class="alert alert-danger" >
+          Enter Correct Name
+        </span>
+      </td>
+    </tr>
+      <tr>
+        <td><b>Enter Flat/House_No</b></td>
+        <td><input type="text" [(ngModel)]="ship.flat_no" #flat_no=ngModel name="flat_no" required >
+          <span *ngIf="flat_no.invalid &&  flat_no.errors.required " class="alert alert-danger" >
+            Enter Correct Flat/House No
+          </span>
+        </td>
+      </tr>
+      
+      <tr>
+        <td><b>Enter Area Name</b></td>
+        <td><input type="text" [(ngModel)]="ship.area_name" #area_name=ngModel name="area_name" required>
+          <span *ngIf="area_name.invalid &&  area_name.errors.required " class="alert alert-danger" >
+            Enter Correct Area Name
+          </span>
+        </td>
+      </tr>
+      
+      <tr> 
+        <td><b>Enter Road Name</b></td>
+        <td><input type="text" [(ngModel)]="ship.road_name" #road_name=ngModel name="road_name" required>
+          <span *ngIf="road_name.invalid && road_name.errors.required " class="alert alert-danger" >
+            Enter Correct Road Name
+          </span>
+        </td>
+      </tr>
+     
+      <tr>
+         <td><b>Enter City</b></td>
+         <td><input type="text" [(ngModel)]="ship.city" #city=ngModel name="city" required>
+          <span *ngIf="city.invalid && city.errors.required " class="alert alert-danger" >
+            Enter Correct City
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Enter Pincode</b></td>
+        <td><input type="number" [(ngModel)]="ship.pincode" #pincode=ngModel name="pincode" required pattern="[0-9]{6}">
+         <span *ngIf="pincode.invalid && ( pincode.errors.required || pincode.errors.pattern)" class="alert alert-danger" >
+           Enter Correct Pincode
+         </span>
+       </td>
+     </tr>
+      <tr>
+        <td><b>Enter State</b></td>
+        <td><input type="text" [(ngModel)]="ship.state" #state=ngModel name="state" required >
+          <span *ngIf="state.invalid && state.errors.required" class="alert alert-danger" >
+            Enter Correct State
+          </span>
+        </td>
+      </tr>
+      
+      <tr>
+         <td><b>Enter EmailID</b></td>
+         <td><input type="text" [(ngModel)]="ship.email_id" #email_id=ngModel name="email_id" required pattern="[a-zA-z0-9]{3,}[@][a-zA-z]{4,}[.][a-zA-Z]{2,}">
+          <span *ngIf="email_id.invalid && ( email_id.errors.required || email_id.errors.pattern)" class="alert alert-danger" >
+            Enter Correct email id
+          </span>
+         </td>
+        </tr>
+     
+      <tr>
+         <td><b>Enter Phone Number</b></td>
+         <td><input type="number" [(ngModel)]="ship.phone_no" #phone_no=ngModel name="phone_no" required pattern="[789][0-9]{9}">
+          <span *ngIf="phone_no.invalid && ( phone_no.errors.required || phone_no.errors.pattern)" class="alert alert-danger" >
+            Enter Correct phone Number
+          </span>
+         </td>
+        </tr>  
+  </table>
+<button class="btn btn-success" (click)="showdetails()"  [disabled]="!addform.valid">Sava And Proceed</button>
+  
+</form>

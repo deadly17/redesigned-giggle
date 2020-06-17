@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <div style="text-align: center"> 
+        <h1 Style= "color:white">CapStore</h1>
+      </div>
+      <table>
+        <tr>
+          <td style="text-align: left">
+            <a href="#" class="btn btn-info btn-default">
+                <span class="glyphicon glyphicon-home"></span> Home 
+              </a>
+          </td>
+          </tr>
+        </table>
+  <!-- <div class="container-fluid" >
+    <ul class="nav navbar-nav" >
+        <li><a [routerLink]="['shipdetails']">ENTER SHIPPING DETAILS</a></li>
+        <li><a [routerLink]="['showdetails']">SHOW DETAILS</a></li>
+        <li><a [routerLink]="['generate-invoice']">GENERATE INVOICE</a></li>
+        <li><a [routerLink]="['ordered-items']">ORDERED ITEMS</a></li>
+        <li><a [routerLink]="['getlist']">CART ITEMS</a></li>
+        <li><div class="dropdown">
+          <button class="dropbtn">Mode of Payments</button>
+          <div class="dropdown-content"> 
+           <a [routerLink]="['credit']">Credit Card</a>
+           <a [routerLink]="['debit']"> Debit Card</a>
+           <a [routerLink]="['cod']"> Cash On Delivery</a>
+         </div></div></li>
+    </ul>
+  </div> -->
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

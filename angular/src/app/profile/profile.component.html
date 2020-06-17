@@ -1,0 +1,30 @@
+<form>
+  <h1>Edit Profile</h1>
+  <table>
+      <tr>  
+          <td>Id</td>
+          <td><input type="number" [(ngModel)]="edit.customer_id" name="customer_id"></td>
+        </tr>&nbsp;
+    <tr>
+      <td>Name</td>
+      <td><input  type="text" [(ngModel)]="edit.customer_name" name="customer_name"></td>
+    </tr>&nbsp;
+    <tr>
+      <td>Email</td>
+      <td><input type="text" [(ngModel)]="edit.customer_email" name="customer_email"></td>
+    </tr>&nbsp;
+    <tr>
+      <td>Aadhar</td>
+      <td><input type="number" [(ngModel)]="edit.customer_aadhar" name="customer_aadhar"></td>
+    </tr>&nbsp;
+    <tr>  
+      <td>Phone</td>
+      <td><input type="number" [(ngModel)]="edit.customer_phone" name="customer_phone"></td>
+    </tr>&nbsp;
+    <tr>
+      <td><button type="submit" class="btn-danger" (click)='update(edit)'>Update</button></td>
+    </tr>
+  </table>
+
+</form>
+

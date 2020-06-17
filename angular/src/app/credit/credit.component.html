@@ -1,0 +1,32 @@
+<form (ngSubmit)='addcard()' #addForm=ngForm >
+  <table class="table table-bordered" style="text-align: center">
+   
+    <tr><td>Enter Name on the Credit Card</td>
+      <td><input [(ngModel)]="credit.cardname" name="cardname" #cardname=ngModel pattern="[A-Za-z]{1,}" required >
+      <span *ngIf="cardname.invalid">
+        <span *ngIf="cardname.errors.required" class="alert alert-danger">Can not be left empty</span>
+        <span *ngIf="cardname.errors.pattern" class="alert alert-danger">Invalid Name</span></span></td></tr>
+        
+        <tr><td>Enter Account No.</td>
+      <td><input [(ngModel)]="credit.accountNo" name="accountNo" required pattern="[0-9]{3}" #accountNo=ngModel>
+        <span *ngIf="accountNo.invalid">
+        <span *ngIf="accountNo.errors.required" class="alert alert-danger">Can not be left empty</span>
+        <span *ngIf="accountNo.errors.pattern" class="alert alert-danger">Invalid Account number</span></span></td></tr>
+    
+        <tr><td>Enter Expiry Date</td>
+      <td><input [(ngModel)]="credit.expirydate" name="credit.expirydate" required #expirydate=ngModel>
+        <span *ngIf="expirydate.invalid">
+          <span *ngIf="expirydate.errors.required" class="alert alert-danger">Can not be left empty</span></span>
+        <!-- <span *ngIf="(loanDate.errors.required)" class="alert-danger">Invalid Date</span></td></tr> --></td></tr>
+   
+      <tr><td>Enter CVV</td>
+      <td><input [(ngModel)]="credit.cvv" name="credit.cvv" required pattern="[0-9]{3}" #cvv=ngModel>
+        <span *ngIf="cvv.invalid">
+        <span *ngIf="cvv.errors.required" class="alert alert-danger">Can not be left empty</span>
+        <span *ngIf="cvv.errors.pattern" class="alert alert-danger">Invalid CVV</span></span></td></tr>
+  </table>
+ 
+  <div style="text-align: center">
+    <button class="btn btn-success"  [disabled]="!addForm.valid">Continue</button>
+  </div>
+</form>

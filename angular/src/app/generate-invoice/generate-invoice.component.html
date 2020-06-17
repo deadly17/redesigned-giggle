@@ -1,0 +1,150 @@
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+      <h1>Thanks for Shopping on CapStore.</h1>
+  </h1>
+  <img width="300" alt="Angular Logo" src="https://www.crecso.com/wp-content/uploads/Online-Shopping.jpg">
+</div>
+<div >
+<h3>ORDER DETAILS</h3>
+<!-- <table class="table table-bordered">
+  <tr> 
+    <td>Order No.:</td>
+    <td>{{invoice.order_id}}</td>
+  </tr>
+  <tr>
+    <td>Product Name:</td>
+    <td>{{invoice.pro_name}}</td>
+  </tr>
+  <tr>
+    <td>Product Quantity:</td>
+    <td>{{invoice.quantity}}</td></tr>
+  <tr>
+    <td>Product Price:</td>
+    <td>{{invoice.price}}</td></tr>
+  
+  <tr>
+    <td>Gst:</td>
+    
+  <tr>
+    <td>Total Discount:</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Applied Coupon:</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Order Total:</td>
+    <td>{{invoice.price}}</td>
+  </tr>
+  <tr>
+    <td>Shipment Status:</td>
+    <td>{{invoice.delivered_address}}</td>
+  </tr>
+  <tr>
+    <td>Tentative Date:</td>
+    <td>{{invoice.order_date}}</td>
+  </tr>
+  <tr>
+    <td>Payment Mode:</td>
+    <td>{{invoice.payment_mode}}</td>
+  </tr>
+</table> -->
+
+<h4>Order No.&nbsp; &nbsp;{{invoice.order_id}}</h4>
+<table class="table table-bordered">
+<tr>
+  <td>Product Id:</td>
+  <td>Product Name:</td>
+  <td>Product Quantity:</td>
+  <td>Product Price:</td>
+</tr>
+<tr *ngFor="let in of invoices;let i =index" >
+  <td>{{in.pro_id}}</td>
+  <td>{{in.pro_name}}</td>
+  <td>{{in.quantity}}</td>
+  <td>{{in.price}}</td>
+  <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">feedback</button></td>
+</tr>
+<tr>
+  <td colspan="3">Gst:</td>
+  <td colspan="2">5</td>
+</tr>
+<tr>
+  <td colspan="3">Total Discount:</td>
+  <td colspan="2"></td>
+</tr>
+<tr>
+  <td colspan="3">Applied Coupon:</td>
+  <td colspan="2"></td>
+</tr>
+<tr>
+  <td colspan="3">Order Total:</td>
+  <td colspan="2">{{invoice.price}}</td>
+</tr>
+<tr>
+  <td colspan="3">Delivery Address : </td>
+  <td colspan="2">{{invoice.delivered_address}}</td>
+</tr>
+<tr>
+  <td colspan="3">Payment Mode:</td>
+  <td colspan="2">{{invoice.payment_mode}}</td>
+</tr>
+</table>
+</div>
+
+
+<!-- Feedback Popup -->
+
+<!-- Feedback form popup -->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Product Name</b></label><br>
+      <input type="text" [(ngModel)]="ratingFeedback.name" placeholder="Product Name.." name="productName" required><br>
+
+      <label for="psw"><b>Rating</b></label><br>
+      <select [(ngModel)]="ratingFeedback.stars" name="stars">
+<!--         
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+              <option value="4">4</option>
+                    <option value="5">5</option>
+      </select>  <br>      -->
+      <option  *ngFor = "let rat of rating">{{rat}}</option>
+      </select><br>
+      <label for="subject"><b>Review</b></label><br>
+      <textarea  id="subject" [(ngModel)]="ratingFeedback.comments" name="comments" placeholder="Write something.." style="height:80px"></textarea>
+   
+      <button class="submitFeed" type="submit" (click)="submitFeedback()">Submit Feedback</button>
+      
+    </div>
+
+    <!-- <div class="container">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+       <span class="psw">Forgot <a href="#">password?</a></span> -->
+    <!-- </div> --> 
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>

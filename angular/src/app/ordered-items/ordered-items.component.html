@@ -1,0 +1,22 @@
+<div style="text-align:center">
+  <h3>Order History</h3>
+  <table class="table table-bordered">
+      <tr>
+    <tr><th>Product Id</th>
+    <th>Product Name</th>
+    <th>Product Quantity</th>
+    <th>Product Price</th>
+    <th>Shipment Status</th>
+    <th>Action</th></tr>
+      <tr *ngFor="let d of delivery;let i=index">
+        <td>{{d.pro_id}}</td>
+        <td>{{d.pro_name}}</td>
+        <td>{{d.quantity}}</td>
+        <td>{{d.price}}</td>
+        <td>{{d.status}}</td>
+        <td><button type="submit" class="btn btn-danger" (click)="returnGood(d.d_id)">Return Good</button></td>
+    
+    
+    </tr>
+  </table>
+  </div>

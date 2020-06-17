@@ -1,0 +1,107 @@
+
+  <table>
+      <tr>
+        <td><div class="dropdown">
+        <button class="btn" style="border-left:1px solid #0d8bf2">
+          Sort By <i class="glyphicon glyphicon-sort"></i>
+        </button>
+        <div class="dropdown-content">
+          <a (click)='sorthightolow()'>High to Low</a>
+          <a (click)='sortlowtohigh()'>Low to High</a>
+          <a (click)='sortbynewarrivals()'>New Arrivals</a>
+        </div>
+    </div>
+    </td>
+    <!-- <td>
+      <div class="dropdown">
+      <button class="btn" style="border-left:1px solid #0d8bf2">
+        Filter By <i class="glyphicon glyphicon-filter"></i>
+      </button>
+      <div class="dropdown-content">
+        <a (click)='filterbyprice()'>By Price</a>
+        <a (click)='filterbydiscount()'>By Discount</a>
+        <a (click)='filterbybrand()'>By Brand</a>
+      </div>
+    </div>
+    </td> -->
+    </tr>
+    </table>
+    <br>
+    <br><br>
+    <div [hidden]=!ok>
+    <table class ="table table-bordered">
+          
+        <tr>
+          <th> ProductId</th>
+          <th> ProductName </th>
+          <th> Price </th>
+          <th> Stock </th>
+        </tr>
+          <tr *ngFor ="let p of products; let i=index">
+              <td>{{ p.id }}</td>
+              <td>{{ p.name }}</td>
+              <td>{{ p.price }}</td>
+              <td>{{ p.stock }}</td>
+              <td><button class="btn btn-info" (click)="View(p)">view</button></td>
+          </tr>   
+      </table>
+    </div>
+    <div [hidden]=!high>
+      <table class ="table table-bordered">
+          
+          <tr>
+            <th> ProductId</th>
+            <th> ProductName </th>
+            <th> Price </th>
+            <th> Stock </th>
+          </tr>
+            <tr *ngFor ="let p of products; let i=index">
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }}</td>
+                <td>{{ p.stock }}</td>
+                <td><button class="btn btn-info" (click)="View(p)">view</button></td>
+            </tr> 
+            
+        </table>
+      </div>
+      <div [hidden]=!low>
+        <table class ="table table-bordered">
+          
+            <tr>
+              <th> ProductId</th>
+              <th> ProductName </th>
+              <th> Price </th>
+              <th> Stock </th>
+            </tr>
+              <tr *ngFor ="let p of products; let i=index">
+                  <td>{{ p.id }}</td>
+                  <td>{{ p.name }}</td>
+                  <td>{{ p.price }}</td>
+                  <td>{{ p.stock }}</td>
+                  <td><button class="btn btn-info" (click)="View(p)">view</button></td>
+              </tr> 
+              
+          </table>
+        </div>
+        <div [hidden]=!new>
+          <table class ="table table-bordered">
+          
+              <tr>
+                <th> ProductId</th>
+                <th> ProductName </th>
+                <th> Price </th>
+                <th> Stock </th>
+              </tr>
+                <tr *ngFor ="let p of products; let i=index">
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>{{ p.stock }}</td>
+                    <td><button class="btn btn-info" (click)="View(p)">view</button></td>
+                </tr> 
+                
+            </table>
+          </div>
+    
+    

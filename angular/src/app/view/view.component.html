@@ -1,0 +1,57 @@
+
+<table class ="table table-bordered">
+      
+  <tr>
+    <th> ProductId :</th>
+    <td>{{ product.id }}</td>
+  </tr>
+  <tr>
+      <th> Product Name :</th>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+        <th> Brand :</th>
+        <td>{{ product.brand }}</td>
+     </tr> 
+     <tr>
+        <th> Price</th>
+        <td>{{ product.price }}</td>
+  </tr>  
+  <tr>
+      <th> Category : </th>
+      <td>{{ product.category }}</td>
+    </tr>    
+    <tr>
+        <th> Sub Category:</th>
+        <td>{{ product.sub_category }}</td>
+      </tr>
+     <tr>
+        <th> Discount :</th>
+        <td>{{ product.discount }}</td>
+      </tr>
+
+  <tr>
+      <th> Stock </th>
+      <td>{{ product.stock }}</td>
+  </tr>  
+  <tr>
+      <th> Promo Code :</th>
+      <td>{{ product.promo_code }}</td>
+  </tr> 
+  
+    <tr>
+          <th> Vote Count :</th>
+          <td>{{ product.vote_count }}</td>
+     </tr>
+     <tr>Enter Quantity
+      <input type="text" placeholder="enter quantity" [(ngModel)]="quantity" name="quantity" >
+
+     </tr>
+   <tr> <td><button class="btn mat-success" (click)="addCart(product,quantity)"> 
+          <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button></td>
+        <td><button class="btn mat-success2" (click)="wishlist(product)">
+            <span class="glyphicon glyphicon-heart"></span></button></td>
+        <td><button class="btn mat-success3" (click)="buynow(product)">Buy Now</button></td>
+
+    </tr> 
+</table>

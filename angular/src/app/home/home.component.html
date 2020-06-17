@@ -1,0 +1,51 @@
+<form >
+  <table >
+    <tr>
+      <td>
+          <input type="text" placeholder="Search item" [(ngModel)]=product.searchitem name="searchitem" >
+      </td>
+      <td>
+        <select name="searchitemby" [(ngModel)]="product.searchitemby" (click)="upload()" style="background-size: initial">
+          <option *ngFor="let s of searchby">{{s}}
+        </option></select> 
+      </td>
+  
+      <td><button type="button" class="btn btn-default" (click)="search()" style="background-color: rgb(96, 193, 231)">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button></td>
+  
+        <td><button type="button" class="btn btn-default" (click)="User()" style="background-color: rgb(96, 193, 231)">
+            <span class="glyphicon glyphicon-user"></span> User
+          </button></td>
+    </tr>
+  </table>
+  <br>
+  <!-- <router-outlet></router-outlet> -->
+  <div [hidden]=!hide>
+  <table>
+    <tr>
+      <td>
+        <img src="https://d1hekt5vpuuw9b.cloudfront.net/assets/article/27214592931d6ec297af2a59b358c874_senior-discounts-list-all-580x326_featuredImage.jpg"  width="320" height="236"> 
+      </td>
+      <td>
+        <img src="https://www.visionefx.net/wp-content/uploads/Ecommerce-Websites-New.jpg"  width="330" height="236">
+      </td>
+      <td>
+        <img src="https://previews.123rf.com/images/scanrail/scanrail1302/scanrail130200029/18007133-mobile-devices-mobility-and-telecommunication-concept-metal-business-laptop-or-office-notebook-table.jpg" width="350" height="236">
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table>
+    <tr>
+      <td>
+        <img src="https://img.etimg.com/thumb/height-450,width-800,msid-64995160,imgsize-41334/amazonsalenew.jpg"  width="500" height="236"  >&nbsp;
+      </td>
+      <td>
+        <img src="http://www.furniture-for-shops.com/Images/prodotti/arredamenti-allestimenti-per-negozi-abbigliamento-uomo-donna-e-bambino/070-Furnishings-for-Childrens%E2%80%99-clothing-shops.jpg" width="500" height="236" >
+      </td>
+    </tr>
+    </table>
+  </div>
+  </form>
+  

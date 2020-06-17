@@ -1,0 +1,57 @@
+<!-- <div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Quantity &nbsp;&nbsp;&nbsp;&nbsp;<button class="button" value="submit">Update</button></th>
+        <th>Discount</th>
+        <th>Price</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let c of carts;let p of product; let i=index">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.discount}}</td>
+        <td>{{p.tprice}}</td>
+     
+        <td><button class="btn btn-danger" (click)="remove(i)" value="submit">Remove</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><button class="btn btn-primary" style="margin-right:16px" value="submit">Back</button>
+            <button class="btn btn-success" (click)="showdetails()" style="margin-left: 1150px" value="submit">Buy Now</button></div> -->
+            <div>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Name</th>
+                      <th>Quantity &nbsp;&nbsp;&nbsp;&nbsp;<button class="button" value="submit">Update</button></th>
+                      <th>Discount</th>
+                      <th>Price</th>
+                      <th>Total</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   <tr *ngFor="let c of carts; let i=index">
+                    
+                      <td>{{c.pro_id.id}}</td>
+                      <td>{{c.pro_id.name}}</td>
+                      <td>{{c.quantity}}</td>
+                      <td>{{c.pro_id.discount}}</td>
+                      <td>{{c.pro_id.price}}</td>
+                      <td>{{c.tPrice}}</td>
+                      <td><button class="btn btn-danger" (click)="remove(c)" value="submit">Remove</button>
+                      </td>
+                      <tr> <td><button class="btn btn-danger" (click)="join()" value="submit">Final Price</button></td></tr>
+                      <tr> <td>{{carts[tot].finalprice}}</td></tr>      
+                      </tbody>
+                  </table>
+                
+                    <button class="btn btn-success" style="margin-left: 1150px" value="submit">Buy Now</button>
+                 </div> 

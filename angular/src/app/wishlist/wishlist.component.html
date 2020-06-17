@@ -1,0 +1,25 @@
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Stock</th>
+        <th>Discount</th>
+        <th>Price</th> 
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let w of wishes; let i=index">
+      
+        <td>{{w.product.id}}</td>
+        <td>{{w.product.name}}</td>
+        <td>{{w.product.stock}}</td>
+        <td>{{w.product.discount}}</td>
+        <td>{{w.product.price}}</td>
+        <td><button class="btn btn-danger" (click)="remove(w)"value="submit">Delete</button></td>
+        
+        </tbody>
+    </table>
+    

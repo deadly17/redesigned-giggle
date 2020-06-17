@@ -1,0 +1,20 @@
+<!-- <div class="container-fluid" >
+    <ul class="nav navbar-nav" >
+<li><div class="dropdown">
+    <button class="dropbtn">Mode of Payments</button>
+    <div class="dropdown-content"> 
+     <a [routerLink]="['credit']">Credit Card</a>
+     <a [routerLink]="['debit']"> Debit Card</a>
+     <a [routerLink]="['cod']"> Cash On Delivery</a>
+   </div>
+</div></li></ul></div>
+<div class="container-fluid">
+<router-outlet></router-outlet>
+</div> -->
+
+<h1>Payment Mode</h1>
+<button type="submit" class="btn btn-success" (click)="cod()">Cash on Delivery</button>
+<br>
+<button type="submit" class="btn btn-success" (click)="debit()">Debit Card</button>
+<br>
+<button type="submit" class="btn btn-success" (click)="credit()">Credit Card</button>
