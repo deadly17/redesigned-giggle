@@ -66,7 +66,7 @@ public class ShippingController {
 		WishList wishlist=service1.getwish(p, cust_id);
 		service1.addtoWishList(wishlist);
 	}
-	@PostMapping(value = "/cart/add/{cust_id}", consumes = "application/json")
+	@PostMapping(value = "/cart/add/{cust_id}/{quantity}", consumes = "application/json")
 	public String addCart(@PathVariable("cust_id") int cust_id,@PathVariable("quantity") int quantity,@RequestBody Capg_Product p) {
 		Cartlist c=service1.getcart(p,cust_id,quantity);
 	 service1.addToCart(c);
